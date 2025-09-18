@@ -1,0 +1,23 @@
+/*-- scss:defaults --*/
+//body-bg is background, body-color is text
+//$body-bg: #01364C;
+//$body-bg: #02577b;
+//$body-bg: #219EBC;
+$body-bg: #002676;
+$body-color: #F7F8F9;
+$link-color: #99D9DD;
+$code-block-bg: #F7F8F9;
+$code-block-font-size: 0.6em;
+$presentation-title-slide-text-align: left;
+$code-color: #FDB515;
+
+/*-- scss:rules --*/
+
+.extra-style {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: medium;
+  text-align: right;
+  width: 100%; /* Optional, to allow the text to spread */
+}
