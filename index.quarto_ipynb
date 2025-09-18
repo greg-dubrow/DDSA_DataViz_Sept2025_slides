@@ -11,9 +11,6 @@
         "  revealjs:\n",
         "    theme: [default, custom.scss]\n",
         "    center-title-slide: false\n",
-        "    # title-slide-attributes:\n",
-        "    #   data-background-image: \"bike_dragor.jpeg\"\n",
-        "    #   data-background-size: contain\n",
         "    slide-number: c/t\n",
         "    code-link: true\n",
         "    code-overflow: wrap\n",
@@ -678,7 +675,7 @@
         "<h2> {{< fa brands linkedin >}} &nbsp; &nbsp; [linkedin.com/in/dubrowg](https://www.linkedin.com/in/dubrowg/)</h2>\n",
         "<h2> {{< fa brands bluesky >}} &nbsp; &nbsp;[bsky.app/profile/gregerskjerulf.bsky.social](https://bsky.app/profile/gregerskjerulf.bsky.social) </h2>"
       ],
-      "id": "18469825"
+      "id": "4639741a"
     }
   ],
   "metadata": {

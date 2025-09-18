@@ -5,9 +5,6 @@ format:
   revealjs:
     theme: [default, custom.scss]
     center-title-slide: false
-    # title-slide-attributes:
-    #   data-background-image: "bike_dragor.jpeg"
-    #   data-background-size: contain
     slide-number: c/t
     code-link: true
     code-overflow: wrap
