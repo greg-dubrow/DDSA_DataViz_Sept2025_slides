@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <title>DDSA_DataViz_Sept2025_slides – ddsa_dataviz_sept2025_slides</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6c14f23f22f919abe146a2d1c3a4554c.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="slide level2">
+<h2></h2>
+<!---makes code chunk font larger
+```{css echo=FALSE}
+.big-code{
+  font-size: 125%  
+}
+```
+--->
+<center>
+<h1>
+DDSA Data Science in Practice
+</h1>
+<h2>
+Communicating Insights with Effective Data Visualization
+</h2>
+</center>
+<div class="absolute" style="font-size: 64px;top: 500px; left: 32.6667px; width: 490px; height: 113.333px; ">
+<p>Gregers Kjerulf</p>
+<p>Marc Schønwandt</p>
+</div>
+<div class="absolute" style="font-size: 60px;top: 730px; left: 30px; width: 540.667px; height: 123px; ">
+<p>18 September, 2025</p>
+</div>
+<p><img data-src="images/cphr_talk_2.png" class="absolute" style="top: 250px; left: 635px; width: 1300px; height: 840px; "></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+DDSA Data Science in Practice
+</h1>
+<h2>
+Communicating Insights with Effective Data Visualization
+</h2>
+</center>
+<p><br> <br></p>
+<div class="absolute" style="top: 280px; left: 30px; ">
+<h3>
+The plan for this afternoon
+</h3>
+</div>
+<div class="absolute" style="top: 340px; left: 30px; ">
+<ul>
+<li class="fragment"><a href="#/why">Why visualize data?</a>
+<ul>
+<li class="fragment">Some theory on design and the grammar of graphics</li>
+</ul></li>
+<li class="fragment"><a href="#/success">Successful data visualization</a>
+<ul>
+<li class="fragment">Marc with stories from the field</li>
+</ul></li>
+<li class="fragment"><a href="#/doit">Let’s visualize some data!</a>
+<ul>
+<li class="fragment">Get into groups and make some charts</li>
+</ul></li>
+<li class="fragment"><a href="#/showit">Show your work</a>
+<ul>
+<li class="fragment">Data visualization insights pageant</li>
+</ul></li>
+<li class="fragment"><a href="#/who">Who has thoughts or questions?</a></li>
+</ul>
+</div>
+<p><img data-src="images/prompt14_2025_sankey.png" class="absolute" style="top: 340px; left: 1030px; width: 48%; "></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Why Visualize Data?
+</h1><h1>
+</h1></center>
+<h2>
+<div style="text-align: left">
+<ul>
+<li class="fragment"><p><em>Information</em></p>
+<ul>
+<li class="fragment"><span style="font-size:0.70em">Examples: sports league tables, political polling charts</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><img data-src="images/epl_table_180925.png" class="absolute" style="top: 400px; left: 50px; width: 58%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/nycmayor_0925_emerson.png" class="absolute" style="top: 400px; left: 1180px; width: 35%; "></p>
+<div class="absolute" style="font-size: 24px;top: 1040px; left: 50px; ">
+<p><em>image sources: https://www.premierleague.com/en/tables and https://emersoncollegepolling.com/nyc-2025-mayor/</em></p>
+</div>
+</div>
+</h2>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Why Visualize Data?
+</h1>
+</center>
+<h2>
+<div style="text-align: left">
+<ul>
+<li class="fragment"><em>Insights</em>
+<ul>
+<li class="fragment"><span style="font-size:0.75em">Examples: company dashboard in real time, annual / quarterly reports</span></li>
+</ul></li>
+</ul>
+</div>
+</h2>
+<div class="fragment">
+<p><img data-src="images/statistiksdk_dash_econ.png" class="absolute" style="top: 360px; left: 110px; width: 50%; "></p>
+<div class="absolute" style="font-size: 24px;top: 1090px; left: 110px; ">
+<p><em>image source: https://www.dst.dk/en/Statistik/temaer/overblik-dansk-oekonomi retrieved 11/09/2025</em></p>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Why Visualize Data?
+</h1>
+</center>
+<h2>
+<div style="text-align: left">
+<ul>
+<li class="fragment"><em>Persuasion</em>
+<ul>
+<li class="fragment"><span style="font-size:0.75em">Examples: research papers, data-driven blogs</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><img data-src="images/nrennie_30day2025_day_14.png" class="absolute" style="top: 360px; left: 110px; width: 50%; "></p>
+<div class="absolute" style="font-size: 24px;top: 1090px; left: 110px; ">
+<p><em>image source: https://github.com/nrennie/30DayChartChallenge/tree/main/2025#day-14-kinship-made-with-r</em></p>
+</div>
+</div>
+</h2></section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Data Viz Theory Time!
+</h1>
+</center>
+<div class="fragment">
+<div class="absolute" style="font-size: 42px;top: 202px; left: 40px; width: 1245.38px; height: 103.35px; ">
+<h2>
+Let’s talk about the <em>Grammar of graphics</em>
+</h2>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="font-size: 44px;top: 354.33px; left: 40px; width: 492.8px; height: 66.2644px; ">
+<h3>
+What is grammar?
+</h3>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="font-size: 50px;top: 446.755px; left: 118px; width: 1445.69px; height: 226.198px; ">
+<p><em>The whole system and structure of a language or of languages in general, usually taken as consisting of syntax and morphology (including inflections) and sometimes also phonology and semantics.</em></p>
+</div>
+<div class="absolute" style="font-size: 24px;top: 645px; left: 118px; width: 1445.69px; height: 226.198px; ">
+<p><em>Source: Oxford Languages via google</em></p>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="font-size: 44px;top: 735px; left: 40px; width: 1245.38px; height: 103.35px; ">
+<h3>
+How we structure what we want to communicate.
+</h3>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="fragment">
+<div class="absolute" style="top: 200px; left: 40px; width: 1400px; height: 103.35px; ">
+<h2>
+Ok, so how does that apply to data visualization?
+</h2>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="font-size: 52px;top: 300px; left: 40px; width: 997.7px; height: 167.089px; ">
+<p>It is a framework to describe the elements of a data graphic and guides our design choices.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="font-size: 52px;top: 490px; left: 40px; width: 997.7px; height: 167.089px; ">
+<p>How we structure the data we want to communicate visually.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="font-size: 52px;top: 680px; left: 40px; width: 983.122px; height: 154.599px; ">
+<p>Original concept by Leland Wilkinson, in his book, <em>The Grammar of Graphics</em>.</p>
+</div>
+<div class="absolute" style="top: 300px; left: 1166.7px; width: 550px; height: 428.78px; ">
+<p><img src="images/grammarofgraphics_cover.jpg"></p>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Great, so what are the elements?
+</h2>
+</div>
+<div class="absolute" style="top: 250px; left: 140px; ">
+<h2>
+<ul>
+<li class="fragment">Data</li>
+<li class="fragment">Aesthetics</li>
+<li class="fragment">Scale</li>
+<li class="fragment">Geometric Objects</li>
+<li class="fragment">Statistics</li>
+<li class="fragment">Facets</li>
+<li class="fragment">Coordinate system</li>
+</ul>
+</h2>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Data
+</h2>
+</div>
+<div class="absolute" style="top: 275px; left: 140px; ">
+<h2>
+What are we going to display?
+</h2>
+</div>
+<p><img data-src="images/whrdatata_glimpse.png" class="absolute" style="top: 360px; left: 140px; width: 65%; "></p>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Aesthetics
+</h2>
+</div>
+<div class="absolute" style="font-size: 38px;top: 300px; left: 40px; ">
+<h2>
+How we display the data using <br>visual elements such as: <br>  - color<br>  - size<br>  - axes<br>  - title<br>  - legend <br>  - annotation text
+</h2>
+</div>
+<div class="absolute" style="top: 293.02px; left: 850px; width: 1200px; height: 1000px; ">
+<p><img src="images/nrennie_30day2025_day_14.png" style="width:85.0%"></p>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Scale
+</h2>
+</div>
+<div class="absolute" style="font-size: 38px;top: 300px; left: 40px; width: 750px; height: 300px; ">
+<h2>
+How do we display the data in relation to an objective point and/or in relation to the data points themselves?
+</h2>
+</div>
+<div class="absolute" style="top: 293.02px; left: 828.758px; width: 1200px; height: 1000px; ">
+<p><img src="images/g_of_g_scale.png" style="width:85.0%"></p>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Scale
+</h2>
+</div>
+<div class="absolute" style="font-size: 38px;top: 300px; left: 40px; ">
+<h2>
+Why are the limits of your scales important?
+</h2>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="images/g_of_g_scale1.png" class="absolute" style="top: 420px; left: 40px; width: 32%; "></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/g_of_g_scale2.png" class="absolute" style="top: 420px; left: 670px; width: 32%; "></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/g_of_g_scale3.png" class="absolute" style="top: 420px; left: 1295px; width: 32%; "></p>
+</div></div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Geometric objects
+</h2>
+</div>
+<div class="absolute" style="top: 275px; left: 140px; ">
+<h2>
+What type &amp; shapes of marks do we use?
+</h2>
+</div>
+<p><img data-src="images/gosta_tempo_scatter.png" class="absolute" style="top: 360px; left: 140px; width: 70%; "></p>
+<div class="absolute" style="font-size: 24px;top: 1040px; left: 140px; ">
+<p><em>Source: https://www.gregdubrow.io/2021/02/27/sad-songs-pretty-charts-a-gosta-berling-music-data-visualization/</em></p>
+</div>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1><h1>
+</h1></center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Statistics
+</h2>
+</div>
+<div class="absolute" style="top: 275px; left: 140px; ">
+<h2>
+How do we measure and analyze the data?
+</h2>
+</div>
+<p><img data-src="images/regression_predact.png" class="absolute" style="top: 375px; left: 100px; width: 1000px; height: 533px; "> <img data-src="images/correlation_heatmap.png" class="absolute" style="top: 375px; left: 1140px; width: 720px; height: 720px; "></p>
+<div class="absolute" style="font-size: 24px;top: 1040px; left: 100px; ">
+<p><em>Source: https://www.gregdubrow.io/posts/my-year-of-riding-danishly/</em></p>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Facets
+</h2>
+</div>
+<div class="absolute" style="top: 275px; left: 140px; ">
+<h2>
+Small multiples for complex visualization
+</h2>
+</div>
+<p><img data-src="images/prompt28_degsall_2025.jpg" class="absolute" style="top: 360px; left: 140px; width: 70%; "></p>
+<div class="absolute" style="font-size: 24px;top: 1090px; left: 140px; ">
+<p><em>Source: https://www.gregdubrow.io/posts/30-day-chart-challenge-2025/#prompt28</em></p>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Coordinate systems
+</h2>
+</div>
+<div class="absolute" style="top: 275px; left: 140px; ">
+<h2>
+How do we position the data in the chart?
+</h2>
+</div>
+<div class="absolute" style="top: 375px; left: 140px; ">
+<h3>
+Cartesian: Each point at a spot identified by the axes
+</h3>
+</div>
+<p><img data-src="images/gosta_tempo_scatter.png" class="absolute" style="top: 460px; left: 140px; width: 45%; "></p>
+<p><img data-src="images/g_of_g_aesthetics.png" class="absolute" style="top: 460px; left: 1020px; width: 45%; "></p>
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+The Grammar of graphics
+</h1>
+</center>
+<div class="absolute" style="top: 190px; left: 40px; ">
+<h2>
+Coordinate systems
+</h2>
+</div>
+<div class="absolute" style="top: 275px; left: 140px; ">
+<h2>
+How do we position the data in the chart?
+</h2>
+</div>
+<div class="absolute" style="top: 370px; left: 140px; width: 700px; height: 300px; ">
+<h3>
+Mapping:<br> Each point at a spot identified by the axes within defined boundaries.
+</h3>
+</div>
+<p><img data-src="images/ssgi1219_crowflies.png" class="absolute" style="top: 370px; left: 890px; width: 40%; "></p>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Tools of the Trade
+</h1>
+</center>
+<div class="fragment">
+<h2>
+It used to be ink and paper…
+</h2>
+</div>
+<div class="fragment">
+<p><img data-src="images/Minard.png"></p>
+<div class="absolute" style="font-size: 28px; text-align: right;top: 1020px; left: -400px; width: 1691.87px; height: 71.6504px; ">
+<p><em>Charles Joseph Minard - Map of successive losses of men of the French Army in the Russian campaign 1812-1813</em></p>
+</div>
+</div>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Tools of the Trade
+</h1>
+</center>
+<h2>
+It used to be ink and paper…
+</h2>
+<div class="fragment">
+<p><img data-src="images/dubois-infographics.jpg" class="absolute" style="top: 200px; left: 105px; width: 42%; "></p>
+<div class="absolute" style="font-size: 32px;top: 550px; left: 105px; ">
+<p><em>WEB DuBois infographics from Paris Expo</em></p>
+</div>
+</div>
+<div class="fragment">
+<p><img data-src="images/nighingale_rose.jpg" class="absolute" style="top: 610px; left: 145px; width: 38%; "></p>
+<div class="absolute" style="font-size: 32px;top: 1075px; left: 145px; ">
+<p><em>Florence Nightingale rose plot</em></p>
+</div>
+</div>
+<div class="fragment">
+<p><img data-src="images/Snow-cholera-map-1.jpg" class="absolute" style="top: 290px; left: 1070px; width: 40%; "></p>
+<div class="absolute" style="font-size: 32px;top: 1020px; left: 1070px; ">
+<p><em>John Snow cholera map</em></p>
+</div>
+</div>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Tools of the Trade
+</h1>
+</center>
+<div class="fragment">
+<p><img data-src="images/r_shiny.jpg" class="absolute" style="top: 110px; left: 270px; width: 25%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/quarto2.jpg" class="absolute" style="top: 317px; left: 270px; width: 23%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/python_streamlit.jpg" class="absolute" style="top: 560px; left: 270px; width: 23%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/tableau1.jpg" class="absolute" style="top: 110px; left: 840px; width: 41%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/power_bi.jpg" class="absolute" style="top: 330px; left: 840px; width: 20%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/d3.jpg" class="absolute" style="top: 330px; left: 1245px; width: 20%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/datawrapper.jpg" class="absolute" style="top: 800px; left: 270px; width: 25%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/observable.png" class="absolute" style="top: 1010px; left: 270px; width: 25%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/looker.jpg" class="absolute" style="top: 770px; left: 890px; width: 15%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/excel.png" class="absolute" style="top: 790px; left: 1270px; width: 17%; "></p>
+</div>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+For inspiration! Data Visualization Resources
+</h1>
+</center>
+<div class="fragment">
+<p><img data-src="images/colin_ware_visualthinking.jpg" class="absolute" style="top: 130px; left: 190px; width: 20%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/tuftebooks_stacked.jpeg" class="absolute" style="top: 130px; left: 670px; width: 30%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/grammarofgraphics_cover.jpg" class="absolute" style="top: 130px; left: 1330px; width: 20%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/swd_books.png" class="absolute" style="top: 670px; left: 170px; width: 30%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/healy datavizbook.jpeg" class="absolute" style="top: 620px; left: 840px; width: 20%; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/visualize_this_nathan_yau.jpg" class="absolute" style="top: 730px; left: 1330px; width: 20%; "></p>
+</div>
+</section>
+<section id="section-21" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Data Visualization Success Stories
+</h1>
+<h1>
+with Marc Schønwandt
+</h1>
+</center>
+</section>
+<section id="section-22" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Let’s Get Creating!
+</h1>
+</center>
+<h2>
+<ul>
+<li><p>Divide by preferred tool and level of expertise</p></li>
+<li><p>Data source: World Happiness Report</p></li>
+</ul>
+</h2>
+<p><img data-src="images/whrdatata_glimpse.png" class="absolute" style="top: 375px; left: 100px; width: 1000px; height: 533px; "></p>
+<div class="fragment">
+<div class="absolute" style="top: 410px; left: 1200px; ">
+<h3>
+Bar chart?
+</h3>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="top: 510px; left: 1200px; ">
+<h3>
+Scatter plot?
+</h3>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="top: 610px; left: 1200px; ">
+<h3>
+Time series?
+</h3>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="top: 710px; left: 1200px; ">
+<h3>
+Map?
+</h3>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="top: 810px; left: 1200px; ">
+<h3>
+Something else?
+</h3>
+</div>
+</div>
+<div class="fragment">
+<div class="absolute" style="top: 950px; left: 100px; ">
+<h3>
+Create a visualization to communicate noteworthy insights from the data.
+</h3>
+</div>
+</div>
+</section>
+<section id="section-23" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+What thoughts or questions do you have?
+</h1>
+</center>
+<div class="absolute" style="top: 200px; left: 500px; ">
+<p><img data-src="images/potato_nugget_chair.jpg" style="width:65.0%" alt="a tuxedo cat and a grey tabby sit under a ddining table waiting for food"></p>
+</div>
+</section>
+<section id="section-24" class="slide level2">
+<h2></h2>
+<center>
+<h1>
+Thank You!
+</h1>
+</center>
+<h2>
+Keep in touch:
+</h2>
+<h2>
+<strong>Marc</strong>
+</h2>
+<h2>
+<i class="fa-brands fa-linkedin" aria-label="linkedin"></i> &nbsp; &nbsp; <a href="https://www.linkedin.com/in/marcschonwandt/">https://www.linkedin.com/in/marcschonwandt/</a> <br> <br>
+</h2><h2>
+<strong>Gregers</strong>
+</h2>
+<h2>
+<i class="fa-solid fa-laptop" aria-label="laptop"></i>&nbsp; &nbsp;<a href="https://www.gregdubrow.io">gregdubrow.io/</a>
+</h2>
+<h2>
+<i class="fa-brands fa-github" aria-label="github"></i> &nbsp; &nbsp;<a href="https://github.com/greg-dubrow">github.com/greg-dubrow</a>
+</h2>
+<h2>
+<i class="fa-brands fa-linkedin" aria-label="linkedin"></i> &nbsp; &nbsp; <a href="https://www.linkedin.com/in/dubrowg/">linkedin.com/in/dubrowg</a>
+</h2>
+<h2>
+<i class="fa-brands fa-bluesky" aria-label="bluesky"></i> &nbsp; &nbsp;<a href="https://bsky.app/profile/gregerskjerulf.bsky.social">bsky.app/profile/gregerskjerulf.bsky.social</a>
+</h2>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
